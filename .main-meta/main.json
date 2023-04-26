@@ -4,8 +4,8 @@
     "content": {
         "metaDataVersion": "1.3.0",
         "name": "com.microchip.mcu8.mplabx.project.pic16f18146-hw-parity-mplab-mcc",
-        "version": " ",
-        "displayName": "",
+        "version": "1.0.0",
+        "displayName": "HW Parity Calculation with SPI/MSSP and CLC on PIC16F18146",
         "projectName": "pic16f18146-hw-parity-mplab-mcc",
         "shortDescription": "Accelerate even/odd parity calculations by using an MSSP instance with a CLC.",
         "ide": {
@@ -19,12 +19,12 @@
             }
         ],
         "dfp": {
-            "name": "",
-            "semverRange": ""
+            "name": "PIC16F1xxxx_DFP",
+            "semverRange": "^1.18.352"
         },
         "configurator": {
-            "name": "",
-            "semverRange": ""
+            "name": "MCC",
+            "semverRange": ">=5.3.0"
         },
         "device": {
             "metaDataVersion": "1.0.0",
@@ -37,8 +37,12 @@
             }
         },
         "author": "Robert Perkel",
-        "peripherals": [],
-        "keywords": [],
+        "peripherals": [
+            "CLC", "EUSART", "TMR1", "TMR2", "MSSP"
+        ],
+        "keywords": [
+            "CIP"
+        ],
         "additionalData": {
             "longDescription": {
                 "metaDataVersion": "1.0.0",
