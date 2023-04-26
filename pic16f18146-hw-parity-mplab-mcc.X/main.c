@@ -90,6 +90,7 @@ int main(void)
 {
     SYSTEM_Initialize();
 
+    //Setup Callback for button press
     CLC2_CLCI_SetInterruptHandler(&onButtonPress);
     
     //Configure SPI
@@ -107,7 +108,7 @@ int main(void)
     {
         if (runTest)
         {
-            printf("Calculating Parity on %d bytes...\r\n\r\n", DATA_SCAN_LENGTH);
+            printf("Calculating Even/Odd Parity on %d bytes...\r\n\r\n", DATA_SCAN_LENGTH);
             
             printf("Software Parity\r\n");
             
