@@ -4,7 +4,7 @@
 
 # HW Parity Calculation with SPI/MSSP and CLC on PIC16F18146
 
-A parity bit is a simple way to protect a chunk of data against single bit transmit errors. The parity bit is used to ensure the number of 1s present in the stream is even or odd (dependent on the receiver). The parity bit is then checked to verify that the number of 1s present in the data is as expected. If it is not, then a single bit error has occurred during transmission and the data is considered to be corrupted. Calculating this in software is straightforward, but is a slow process. Instead, a Host Synchronous Serial Port Module (MSSP) peripheral paired with a Configurable Logic Cell (CLC) can be used to significantly accelerate the calculation. This program will measure this time difference and print it to a serial terminal for comparison. 
+A parity bit is a simple way to protect a chunk of data against single bit transmit errors. The parity bit is used to ensure the number of ones present in the stream is even or odd (dependent on the receiver). The parity bit is then checked to verify that the number of ones present in the data is as expected. If it is not, then a single bit error has occurred during transmission and the data is considered to be corrupted. Calculating this in software is straightforward, but is a slow process. Instead, a Host Synchronous Serial Port Module (MSSP) peripheral paired with a Configurable Logic Cell (CLC) can be used to significantly accelerate the calculation. This program will measure this time difference and print it to a serial terminal for comparison. 
 
 ## Software Used  
 - [MPLAB® X IDE 6.0.5 or newer](https://www.microchip.com/en-us/tools-resources/develop/mplab-x-ide?utm_source=GitHub&utm_medium=&utm_campaign=MCU8_MMTCha_pic181xx&utm_content=pic16f18146-hw-parity-mplab-mcc-github)
@@ -58,7 +58,7 @@ Since this implementation doesn't use the reset, it is necessary to first store 
 
 *Note: If the SPI bus is used for communication, be sure to deassert the Chip Select (CS) and Serial Select (SS) lines when performing this operation.*  
 
-When the data transmission is complete, read the output state of the CLC. If the new output matches the original output, an even number of 1s have been seen. If they mismatch, then an odd number of 1s have been seen.  
+When the data transmission is complete, read the output state of the CLC. If the new output matches the original output, an even number of ones have been seen. If they mismatch, then an odd number of ones have been seen.  
 
 ## Evaluating the Performance
 On startup, the system computes the parity using a hard-coded set of constants. While parity is being calculated, Timer 1 is used to measure how many clock cycles (Fosc/4) it takes to execute. A sample output is shown below.
